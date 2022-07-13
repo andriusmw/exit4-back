@@ -1,0 +1,441 @@
+{
+	"info": {
+		"_postman_id": "ac743e83-5cfd-4e02-8015-c12c00f7b1d0",
+		"name": "URBANISMO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21147042"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"perica@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"name\": \"pe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "registrationCode",
+							"value": "'aacb3b57-7859-4347-ab6a-9a0d83f83e79'",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "perico1234",
+							"disabled": true
+						}
+					]
+				},
+				"description": "URBANISMO post registro usuario"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users/:registrationCode",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"perico@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"name\": \"perico1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/activate/aacb3b57-7859-4347-ab6a-9a0d83f83e79",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"activate",
+						"aacb3b57-7859-4347-ab6a-9a0d83f83e79"
+					],
+					"query": [
+						{
+							"key": "registrationCode",
+							"value": "'aacb3b57-7859-4347-ab6a-9a0d83f83e79'",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "perico1234",
+							"disabled": true
+						}
+					]
+				},
+				"description": "GET"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@email.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users/:2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjU0NTA0NjY0LCJleHAiOjE2NTcwOTY2NjR9.l9A8hvCAbTY7Z6ldzXw1xXijMDIOFuZxUd73B6P1Bdo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "iduser",
+						"value": "2",
+						"type": "text"
+					},
+					{
+						"key": "tokentype",
+						"value": "admin",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:3000/users/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/entries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/entries",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"entries"
+					]
+				},
+				"description": "GET ENTRIES"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/entries/barrio",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/entries/barrio",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"entries",
+						"barrio"
+					]
+				},
+				"description": "GET ENTRIES BY BARRIO"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users/:email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/admin@email.com",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"admin@email.com"
+					]
+				},
+				"description": "GET ENTRIES BY BARRIO"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n              \"email\": \"yoponi8140@musezoo.com\",\r\n              \"password\": \"1234\",\r\n              \"name\": \"juaniata1234\"\r\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				},
+				"description": "registrar usuario, selecionar JSON"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/entries",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjU2MzM4OTUxLCJleHAiOjE2NTg5MzA5NTF9.3SWe5EER16wxGAsVnBidk_3HnyvhJoKiw_vzqevwwXs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "titulo 15",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "entry 1 descrip",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Krusty/Downloads/meme feder.jpg"
+						},
+						{
+							"key": "city",
+							"value": "new york",
+							"type": "text"
+						},
+						{
+							"key": "neighborhood",
+							"value": "manhatham",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "open",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/entries",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"entries"
+					]
+				},
+				"description": "crear entradas con imagenes"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/votes/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjU0ODU3MDg5LCJleHAiOjE2NTc0NDkwODl9._BU2TnrX3DQmF6DBYkO3BcQ7FY5UymtnfPyJFzL2d3Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "entryId",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/votes/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"votes",
+						""
+					]
+				},
+				"description": "VOTAR, / CREAR VOTO"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/votes/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/votes/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"votes",
+						""
+					]
+				},
+				"description": "OBTIENE TODOS LAS ENTRADAS CON SUS VOTOS"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/entries/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY1NDkzOTczMywiZXhwIjoxNjU3NTMxNzMzfQ.1pv9PNULkgDju8R_Ns_saJSBI8cHy8Bwp4bdRHHfNuo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "tokentype",
+						"value": "normal",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "status",
+							"value": "closed",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/entries/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"entries",
+						"1"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "closed",
+							"disabled": true
+						}
+					]
+				},
+				"description": "PATCH"
+			},
+			"response": []
+		}
+	]
+}

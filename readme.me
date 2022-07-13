@@ -1,0 +1,92 @@
+-------------------------------------------------------------------------------
+# Modulos a instalar 
+-------------------------------------------------------------------------------
+
+npm instal dotenv
+
+npm init -y
+//crea package.json
+
+npm install express
+
+npm install mysql2
+
+npm install bcrypt
+
+npm install uuid
+
+npm install jsonwebtoken
+
+npm install node-mailjet
+
+npm install express-fileupload
+
+npm install fs
+
+npm install sharp nanoid
+    * nanoid 4.0.0 no es compatible con require
+      es necesario hacer un downgrade a la version 3.0.0
+      usando el comando: npm install nanoid@3.0.0
+
+npm install joi   
+
+npm install cors
+
+
+/-------------------------------------------------------------------------------
+# endpoints y peticiones
+-------------------------------------------------------------------------------
+
+    -app.post("/users", registerUser); //registrar usuario
+
+    comando postmanm: POST, selecionar body , selecionar raw, poner este objeto:
+           {
+              "email": "perico@gmail.com",
+              "password": "1234",
+              "name": "perico1234"
+            }
+
+    -app.get("/users/activate/:registrationCode, activateUser)   -->ACTIVAR USUARIO
+    // sustituir el :registrationCode por el código tal cual y hacer GET con postman.
+
+
+
+    -app.post(/login); --> loguear
+        en body en formato json poner este usuario admin
+          {
+             "email": "admin@email.com",
+             "password": "123456"
+          }
+
+
+    -app.post("/entries) --> para crear entradas
+      primero loguear con login
+      copiar el bearur token 
+      ir a postman, nueva peticion post.
+        clickar en authorization y pasar el bearur token.
+        después ir a body y  FORM-DATA poner todas los parametros en las key
+          (el values del campo photo puede ser null)
+
+
+    -app.get(/entries)    --> cargar todas las entradas
+
+
+    -app.get(/entries/:barrioID) --> cargar todas las entradas de un barrio; se cambiar "barrior" por el nombre del barrio.
+
+
+    -app.get(/users/:email) --> cargar los datos de un usuario por su email, se usa para poder tener los datos del usuario o ver si existe por ejemplo para loguear o activar el user.
+
+
+    -app.post(/entries)  --> se usa para crear nuevas entradas.
+      Llama a validateAuth y luego a ChechAdmin y finalmente a CreateEntry. La info de la entrada va en el body con formado form-data.
+
+
+    -app.post(/votes) -->  Se usa para votar una entrada.
+        en el body y con tipo form-data se le pasan los valores
+          userId y entryId; en ese orden. Además hace falta estar logueado.
+
+    -app.get(/votes)  --> Cargar todas las entradas con sus votos
+
+    app.patch(/entries/:idEntry)  --> Editar la entrada por idendtry.  Sino existe sale error. Sino somos admin, sale error antes.   
+    
+         

@@ -1,0 +1,37 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "fs": "^0.0.1-security",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "nanoid": "^3.0.0",
+    "node-mailjet": "^3.4.1",
+    "sharp": "^0.30.6",
+    "uuid": "^8.3.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "initDB": "node database/initDB.js",
+    "populateDB": "node database/populateDB.js"
+  },
+  "name": "urbanismo",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andriusmw/urbanismo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andriusmw/urbanismo/issues"
+  },
+  "homepage": "https://github.com/andriusmw/urbanismo#readme",
+  "description": ""
+}
